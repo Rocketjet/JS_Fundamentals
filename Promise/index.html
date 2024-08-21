@@ -1,19 +1,27 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-      name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Document</title>
-    <script src="Promise.any.js"></script>
+    <script defer src="Promise.all.js"></script>
   </head>
 
   <body>
-    <h1>Mate academy</h1>
-    <button id="complete">Complete</button>
-    <button id="cancel">Cancel</button>
+    <div id="index">
+      <h1>Mate academy</h1>
+      <button id="complete">Complete</button>
+      <button id="cancel">Cancel</button>
+    </div>
+    <script>
+      const scriptElement = document.head.querySelector('script');
+      if (!scriptElement.src.includes('index.html')) {
+        document.getElementById('index').style.display = 'none';
+      }
+    </script>
   </body>
-
 </html>
