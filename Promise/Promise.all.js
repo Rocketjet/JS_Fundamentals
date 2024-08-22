@@ -12,29 +12,15 @@ Promise.all([p1, p2, p3]).then((values) => {
 
 // [3, 1337, "foo"]
 
-function resolver(promise) {
-  return promise.then(
-    (v) => {
-      return { status: 'fulfilled', value: v };
-    },
-    (error) => {
-      return { status: 'rejected', reason: error };
-    },
-  );
-}
-
 let dataFromPromise;
 const promises = [fetch('https://api.sampleapis.com/coffee/hot'), fetch('https://api.sampleapis.com/coffee/hot')];
 
-const results = Promise.all(promises)
+Promise.all(promises)
   .then((resp) => {
-    return resp.map((p) => p.json());
-  })
-  .then((data) => {
-    return Promise.all(data.map(resolver));
+    return Promise.all(resp.map((p) => p.json()));
   })
   .then((drinks) => {
-    dataExtractor(drinks.map((d) => d.value).flat());
+    dataExtractor(drinks.flat());
   });
 
 function dataExtractor(data) {
