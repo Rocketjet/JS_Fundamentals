@@ -13,7 +13,7 @@ function filter(arr, element) {
 }
 ////////////////////////////////////////////////
 function filter(arr, element) {
-while (arr.includes(element)) {
+  while (arr.includes(element)) {
     const position = arr.indexOf(element);
 
     arr.splice(position, 1);
