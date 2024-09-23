@@ -11,7 +11,7 @@ function capitalsFirst(str) {
   let arr2 = []; //['hey', 'me']
   let count = 0;
 
-  str.split(' ').map(v => v[0] === v[0].toUpperCase() ? arr.push(v) : arr2.push(v)); // наповнення масивів arr і arr2 результатами роботи методыв
+  str.split(' ').map(v => v[0] === v[0].toUpperCase() ? arr.push(v) : arr2.push(v)); // наповнення масивів arr і arr2 результатами роботи методів
 
   return arr
     .filter(v => v[0]
